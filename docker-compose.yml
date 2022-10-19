@@ -47,7 +47,8 @@ services:
       - docker/.env
     ports:
       - "9000:9000"
-    command: server /data
+      - "9001:9001"
+    command: server --console-address :9001 /data
 
   minio-setup:
     image: minio/mc
